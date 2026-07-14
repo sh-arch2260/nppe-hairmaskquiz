@@ -397,7 +397,7 @@ const QUESTIONS = [
     title: "你是否有以下頭皮、肩頸緊繃困擾?",
     options: [
       { text: "燙染髮時頭皮已感覺到不舒服，覺得緊繃和癢", product: "P06" },
-      { text: "頭皮易出油",         product: "P02" },
+      { text: "頭皮易出油", product: "P02" },
       { text: "敏感性頭皮", product: "P12" },
       { text: "頭皮緊繃、乾癢", product: "P06" },
       { text: "壓力大肩頸緊繃", product: "P13" },
@@ -462,7 +462,7 @@ function renderQuestion() {
   document.getElementById('qTitle').textContent   = q.title;
 
   const grid   = document.getElementById('optionsGrid');
-  const labels = ['A', 'B', 'C', 'D'];
+  const labels = ['A', 'B', 'C', 'D', 'E'];
   grid.innerHTML = '';
   q.options.forEach((opt, i) => {
     const btn = document.createElement('button');
