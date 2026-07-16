@@ -331,15 +331,15 @@
 <script>
 const PRODUCTS = {
   P01: { name: "高蛋白修護精華 750ML", price: "NT$1500", image: "https://raw.githubusercontent.com/sh-arch2260/nppe-hairmaskquiz/master/catalog/高蛋白修護精華.png", storeUrl: "https://www.nppehaircare.com/products/hair-revive-protein-rich-hair-serum" },
-  P02: { name: "巴西莓逆齡髮膜", price: "NT$1000", image: "https://raw.githubusercontent.com/sh-arch2260/nppe-hairmaskquiz/master/catalog/高蛋白修護精華.png", storeUrl: "https://www.nppehaircare.com/products/clean-hair" },
-  P03: { name: "能量護髮膜", price: "NT$1000", image: "https://raw.githubusercontent.com/sh-arch2260/nppe-hairmaskquiz/master/catalog/能量護髮膜.png", storeUrl: "https://www.nppehaircare.com/products/甘胺酸護色舒緩洗髮精" },
+  P02: { name: "氨基酸細胞膜 300ML", price: "NT$900", image: "https://raw.githubusercontent.com/sh-arch2260/nppe-hairmaskquiz/master/catalog/高蛋白修護精華.png", storeUrl: "https://www.nppehaircare.com/products/amino-acid-cell-membrane" },
+  P03: { name: "紅絲絨髮香膏 100ML", price: "NT$1000", image: "https://raw.githubusercontent.com/sh-arch2260/nppe-hairmaskquiz/master/catalog/能量護髮膜.png", storeUrl: "https://www.nppehaircare.com/products/perfume-leave-in-hair-treatment" },
   P04: { name: "辣木奇蹟-結構還原護髮霜 750ML", price: "NT$1500", image: "https://raw.githubusercontent.com/sh-arch2260/nppe-hairmaskquiz/master/catalog/辣木奇蹟-結構還原護髮霜.png", storeUrl: "https://www.nppehaircare.com/products/deep-recovery-hair-treatment" },
   P05: { name: "奇蹟柔感原液 6*25ML", price: "NT$1500", image: "https://raw.githubusercontent.com/sh-arch2260/nppe-hairmaskquiz/master/catalog/奇蹟柔感原液.png", storeUrl: "https://www.nppehaircare.com/products/奇蹟柔感原液" },
   P06: { name: "牛磺酸髮根能量活性髮膜 750ML", price: "NT$1000", image: "https://raw.githubusercontent.com/sh-arch2260/nppe-hairmaskquiz/master/catalog/牛磺酸髮根能量活性髮膜.png", storeUrl: "https://www.nppehaircare.com/products/牛磺酸髮根能量活性髮膜" },
   P07: { name: "結構性護髮組 750ML+10ML*7", price: "NT$1800", image: "https://raw.githubusercontent.com/sh-arch2260/nppe-hairmaskquiz/master/catalog/結構性護髮組.png", storeUrl: "https://www.nppehaircare.com/products/結構性護髮組" },
-  P08: { name: "角元蛋白霜 500ML", price: "NT$1800", image: "https://raw.githubusercontent.com/sh-arch2260/nppe-hairmaskquiz/master/catalog/角元蛋白霜.png", storeUrl: "https://www.nppehaircare.com/products/植萃養髮香水" },
+  P08: { name: "熱塑角元蛋白霜 500ML", price: "NT$1800", image: "https://raw.githubusercontent.com/sh-arch2260/nppe-hairmaskquiz/master/catalog/角元蛋白霜.png", storeUrl: "https://www.nppehaircare.com/products/keratin-cream" },
   P09: { name: "日本溫泉豐潤修護髮膜 500ML", price: "NT$1500", image: "https://raw.githubusercontent.com/sh-arch2260/nppe-hairmaskquiz/master/catalog/日本溫泉豐潤修護髮膜.png", storeUrl: "https://www.nppehaircare.com/products/hot-spring-regenerating-hair-mask" },
-  P10: { name: "熱塑角元蛋白霜", price: "NT$1000", image: "https://raw.githubusercontent.com/sh-arch2260/nppe-hairmaskquiz/master/catalog/高蛋白修護精華.png", storeUrl: "https://www.nppehaircare.com/products/頭皮維他命" },
+  //P10: { name: "熱塑角元蛋白霜", price: "NT$1000", image: "https://raw.githubusercontent.com/sh-arch2260/nppe-hairmaskquiz/master/catalog/熱塑角元蛋白霜.png", storeUrl: "https://www.nppehaircare.com/products/頭皮維他命" },
   P11: { name: "同質素 280ML", price: "NT$800", image: "https://raw.githubusercontent.com/sh-arch2260/nppe-hairmaskquiz/master/catalog/同質素.png", storeUrl: "https://www.nppehaircare.com/products/同質素" },
   P12: { name: "YUMMY HAIR活化頭皮潤澤護髮組 25ML + 75ML", price: "NT$800", image: "https://raw.githubusercontent.com/sh-arch2260/product-catalog/master/esuchen/mask/yummy.png", storeUrl: "https://www.nppehaircare.com/products/scalp--hair-revitalizing-treatment" },
   P13: { name: "花果香氛護髮組 750ML + 10ML*7", price: "NT$1300", image: "https://raw.githubusercontent.com/sh-arch2260/nppe-hairmaskquiz/master/catalog/花果香氛護髮組.png", storeUrl: "https://www.nppehaircare.com/products/花果香氛護髮組" },
@@ -387,7 +387,7 @@ const QUESTIONS = [
     emoji: "🎨",
     title: "你染燙的頻率為何?",
     options: [
-      { text: "一年染燙3次含以上(嚴重受損)", product: ["P10","P11"] },
+      { text: "一年染燙3次含以上(嚴重受損)", product: ["P08","P11"] },
       { text: "一年染燙1-2次(中度受損)", product: "P06" },
       { text: "一年有漂髮1-2次", product: ["P09","P11"] },
     ]
