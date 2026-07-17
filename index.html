@@ -96,7 +96,7 @@
     #question { align-items: stretch; }
     .q-topbar {
       display: flex; align-items: center; gap: 12px;
-      padding: 14px 16px 10px;
+      padding: 18px 20px 12px;
       flex-shrink: 0;
     }
     .q-progress-track {
@@ -110,24 +110,18 @@
       font-size: 11px; font-weight: 500; color: var(--muted);
       white-space: nowrap; letter-spacing: 0.04em;
     }
-    .q-image {
-      width: 100%; height: 44vw; max-height: 220px;
-      background: linear-gradient(135deg, #D4C4B4 0%, #9E8878 100%);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 62px; flex-shrink: 0; overflow: hidden;
+    .q-body {
+      flex: 1; padding: 40px 24px 108px;
+      display: flex; flex-direction: column; justify-content: center;
     }
-    .q-image img {
-      width: 100%; height: 100%; object-fit: cover; display: block;
-    }
-    .q-body { flex: 1; padding: 22px 20px 108px; }
     .q-counter {
       font-size: 10px; font-weight: 500; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--warm); margin-bottom: 6px;
+      text-transform: uppercase; color: var(--warm); margin-bottom: 10px;
     }
     .q-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(20px, 5.5vw, 28px); font-weight: 600; line-height: 1.22;
-      margin-bottom: 22px;
+      font-size: clamp(24px, 7vw, 32px); font-weight: 600; line-height: 1.25;
+      margin-bottom: 30px;
     }
     .options-grid {
       display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
@@ -135,9 +129,10 @@
     .option-btn {
       background: var(--card);
       border: 1.5px solid var(--border); border-radius: 6px;
-      padding: 14px 12px; text-align: left; cursor: pointer;
+      padding: 16px 14px; text-align: left; cursor: pointer;
       transition: border-color 0.18s, background 0.18s, transform 0.12s;
-      display: flex; flex-direction: column; gap: 5px;
+      display: flex; flex-direction: column; gap: 6px;
+      min-height: 76px;
     }
     .option-btn:active { transform: scale(0.97); }
     .opt-label {
@@ -269,11 +264,11 @@
   <img src="https://raw.githubusercontent.com/vececalls/LIFF-test/master/nppe-catalog/hero.png" class="cover-hero" alt="cover" />
   <div class="cover-body">
     <div class="eyebrow">2分鐘左右</div>
-    <h1 class="cover-title">頭皮小測試</h1>
-    <p class="cover-sub">了解自己的頭皮問題，才能對症下藥！</p>
+    <h1 class="cover-title">髮膜小測試</h1>
+    <p class="cover-sub">了解自己的頭髮問題，才能對症下藥！</p>
     <div class="cover-meta">
       <div class="cover-meta-item">
-        <span class="val">10</span>
+        <span class="val">5</span>
         <span class="lbl">問題</span>
       </div>
       <div class="cover-meta-item">
@@ -299,7 +294,6 @@
     </div>
     <span class="q-step-label" id="qStepLabel"></span>
   </div>
-  <div class="q-image" id="qImage"></div>
   <div class="q-body">
     <div class="q-counter" id="qCounter"></div>
     <h2 class="q-title" id="qTitle"></h2>
@@ -347,11 +341,11 @@ const PRODUCTS = {
 
 // ═══════════════════════════════════════════════════════════════
 //  QUESTIONS
+//  (question-level images removed — only the cover hero and
+//   product photos are shown now)
 // ═══════════════════════════════════════════════════════════════
 const QUESTIONS = [
   {
-    image: "https://raw.githubusercontent.com/vececalls/LIFF-test/master/nppe-catalog/scalp-problem.jpg",
-    emoji: "💆",
     title: "你期待做完深層護髮後可以得到什麼效果?？",
     options: [
       { text: "頭髮乾燥需要保濕補水", product: "P01" },
@@ -361,8 +355,6 @@ const QUESTIONS = [
     ]
   },
   {
-    image: "https://raw.githubusercontent.com/vececalls/LIFF-test/master/nppe-catalog/q2.png",
-    emoji: "🪞",
     title: "希望髮膜在使用後多久見效？",
     options: [
       { text: "即刻（吹乾就明顯）", product: "P05" },
@@ -371,20 +363,16 @@ const QUESTIONS = [
       { text: "主要追求長期修復，不求速效", product: "P08" },
     ]
   },
-  { 
-    image: "https://raw.githubusercontent.com/vececalls/LIFF-test/master/nppe-catalog/q3.png",
-    emoji: "🌊",
+  {
     title: "你喜歡怎麼樣的髮膜？",
     options: [
       { text: "絲滑豐潤、香氛低調優雅", product: "P09" },
       { text: "輕盈不黏、偏天然植物香氣", product: "P02" },
       { text: "僅追求功效、香味次要", product: "P07" },
-      { text: "喜歡奢華香氛，香味持久度高且使用儀式感強", product: "P06" }, 
+      { text: "喜歡奢華香氛，香味持久度高且使用儀式感強", product: "P06" },
     ]
   },
   {
-    image: "https://raw.githubusercontent.com/vececalls/LIFF-test/master/nppe-catalog/q4.png",
-    emoji: "🎨",
     title: "你染燙的頻率為何?",
     options: [
       { text: "一年染燙3次含以上(嚴重受損)", product: ["P08","P11"] },
@@ -393,7 +381,6 @@ const QUESTIONS = [
     ]
   },
   {
-    emoji: "🔥",
     title: "你是否有以下頭皮、肩頸緊繃困擾?",
     options: [
       { text: "燙染髮時頭皮已感覺到不舒服，覺得緊繃和癢", product: "P06" },
@@ -449,14 +436,6 @@ function renderQuestion() {
 
   document.getElementById('progressFill').style.width = pct + '%';
   document.getElementById('qStepLabel').textContent   = `${currentQ + 1} / ${total}`;
-
-  const qImageEl = document.getElementById('qImage');
-  if (q.image) {
-    qImageEl.innerHTML = `<img src="${q.image}" alt="" />`;
-  } else {
-    qImageEl.innerHTML = '';
-    qImageEl.textContent = q.emoji;
-  }
 
   document.getElementById('qCounter').textContent = `第 ${currentQ + 1} 題，共 ${total} 題`;
   document.getElementById('qTitle').textContent   = q.title;
